@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Prompt Deportivo</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+</head>
+<body class="bg-light">
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4 p-md-5">
+            <h1 class="h3 mb-4 text-center">Formulario de Partido</h1>
+
+            <form id="match-form" class="row g-3" autocomplete="on">
+              <div class="col-12">
+                <label for="sport" class="form-label">Deporte</label>
+                <select id="sport" name="sport" class="form-select" required>
+                  <option value="">Selecciona un deporte</option>
+                  <option value="hockey">Hockey</option>
+                  <option value="football">Fútbol</option>
+                  <option value="basketball">Basketball</option>
+                  <option value="baseball">Baseball</option>
+                  <option value="general">General</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="homeTeam" class="form-label">Equipo local</label>
+                <input id="homeTeam" name="homeTeam" type="text" class="form-control" autocomplete="on" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="awayTeam" class="form-label">Equipo visitante</label>
+                <input id="awayTeam" name="awayTeam" type="text" class="form-control" autocomplete="on" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="matchDate" class="form-label">Fecha del partido</label>
+                <input id="matchDate" name="matchDate" type="date" class="form-control" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="championship" class="form-label">Campeonato (opcional)</label>
+                <input id="championship" name="championship" type="text" class="form-control" autocomplete="on" />
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">Generar prompt</button>
+              </div>
+              <div class="col-12">
+                <button id="clearButton" type="button" class="btn btn-outline-danger w-100">
+                  Limpiar formulario
+                </button>
+              </div>
+            </form>
+
+            <hr class="my-4" />
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h2 class="h5 mb-0">Prompt generado</h2>
+              <div class="d-flex gap-2">
+                <button id="downloadButton" type="button" class="btn btn-outline-primary btn-sm" disabled>
+                  Descargar .txt
+                </button>
+                <button id="copyButton" type="button" class="btn btn-outline-secondary btn-sm" disabled>
+                  Copiar al portapapeles
+                </button>
+              </div>
+            </div>
+            <textarea id="result" class="form-control" rows="12"></textarea>
+            <div id="copyMessage" class="form-text mt-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./promts.js"></script>
+  <script>
+    const form = document.getElementById("match-form");
+    const result = document.getElementById("result");
+    const clearButton = document.getElementById("clearButton");
+    const downloadButton = document.getElementById("downloadButton");
+    const copyButton = document.getElementById("copyButton");
+    const copyMessage = document.getElementById("copyMessage");
+    const matchDateInput = document.getElementById("matchDate");
+
+    const today = new Date().toISOString().split("T")[0];
+    matchDateInput.value = today;
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const sport = document.getElementById("sport").value;
+      const homeTeam = document.getElementById("homeTeam").value.trim();
+      const awayTeam = document.getElementById("awayTeam").value.trim();
+      const matchDate = document.getElementById("matchDate").value;
+      const championship = document.getElementById("championship").value.trim();
+
+      const fixtureInfoLines = [
+        `Sport: ${sport}`,
+        `Home Team: ${homeTeam}`,
+        `Away Team: ${awayTeam}`,
+        `Date: ${matchDate}`,
+      ];
+
+      if (championship) {
+        fixtureInfoLines.push(`Championship: ${championship}`);
+      }
+
+      const fixtureInfo = fixtureInfoLines.join("\n");
+      const selectedPrompt = PREDICTION_PROMPTS[sport] || PREDICTION_PROMPTS.general;
+      const generatedPrompt = selectedPrompt.replace("{fixture_info}", fixtureInfo);
+
+      result.value = generatedPrompt;
+      downloadButton.disabled = false;
+      copyButton.disabled = false;
+      copyMessage.textContent = "Prompt generado correctamente.";
+    });
+
+    clearButton.addEventListener("click", function () {
+      form.reset();
+      matchDateInput.value = today;
+      result.value = "";
+      downloadButton.disabled = true;
+      copyButton.disabled = true;
+      copyMessage.textContent = "Formulario limpiado.";
+    });
+
+    downloadButton.addEventListener("click", function () {
+      const promptText = result.value.trim();
+
+      if (!promptText) {
+        copyMessage.textContent = "Primero genera un prompt para poder descargarlo.";
+        return;
+      }
+
+      const blob = new Blob([promptText], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "prompt-deportivo.txt";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      copyMessage.textContent = "Archivo .txt descargado.";
+    });
+
+    copyButton.addEventListener("click", async function () {
+      const promptText = result.value.trim();
+
+      if (!promptText) {
+        copyMessage.textContent = "Primero genera un prompt para poder copiarlo.";
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(promptText);
+        copyMessage.textContent = "Prompt copiado al portapapeles.";
+      } catch (error) {
+        copyMessage.textContent = "No se pudo copiar automáticamente. Copia manualmente el texto.";
+      }
+    });
+  </script>
+</body>
+</html>

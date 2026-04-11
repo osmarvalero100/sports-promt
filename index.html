@@ -84,7 +84,63 @@
     </div>
   </main>
 
+  <script src="./teams.js"></script>
   <script src="./promts.js"></script>
+
+  <script>
+    const sportSelect = document.getElementById("sport");
+    const homeTeamInput = document.getElementById("homeTeam");
+    const awayTeamInput = document.getElementById("awayTeam");
+
+    let homeTeamDatalist = document.getElementById("homeTeamList");
+    let awayTeamDatalist = document.getElementById("awayTeamList");
+
+    if (!homeTeamDatalist) {
+      homeTeamDatalist = document.createElement("datalist");
+      homeTeamDatalist.id = "homeTeamList";
+      homeTeamInput.setAttribute("list", "homeTeamList");
+      homeTeamInput.parentNode.appendChild(homeTeamDatalist);
+    }
+
+    if (!awayTeamDatalist) {
+      awayTeamDatalist = document.createElement("datalist");
+      awayTeamDatalist.id = "awayTeamList";
+      awayTeamInput.setAttribute("list", "awayTeamList");
+      awayTeamInput.parentNode.appendChild(awayTeamDatalist);
+    }
+
+    function updateTeamAutocomplete(sport) {
+      const teamList = teams[sport] || [];
+      
+      homeTeamDatalist.innerHTML = "";
+      awayTeamDatalist.innerHTML = "";
+
+      teamList.forEach(team => {
+        const option1 = document.createElement("option");
+        option1.value = team;
+        homeTeamDatalist.appendChild(option1);
+
+        const option2 = document.createElement("option");
+        option2.value = team;
+        awayTeamDatalist.appendChild(option2);
+      });
+    }
+
+    sportSelect.addEventListener("change", function() {
+      const selectedSport = this.value;
+      
+      if (selectedSport && selectedSport !== "general" && teams[selectedSport]) {
+        updateTeamAutocomplete(selectedSport);
+      } else {
+        homeTeamDatalist.innerHTML = "";
+        awayTeamDatalist.innerHTML = "";
+      }
+      
+      homeTeamInput.value = "";
+      awayTeamInput.value = "";
+    });
+  </script>
+
   <script>
     const form = document.getElementById("match-form");
     const result = document.getElementById("result");

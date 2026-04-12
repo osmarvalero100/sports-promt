@@ -18,6 +18,7 @@ const allsvenskanTeams = ["AIK", "BK Häcken", "Brommapojkarna", "Djurgårdens I
 const ligaPremierRusaTeams = ["Zenit San Petersburgo", "FC Krasnodar", "CSKA Moscú", "Spartak Moscú", "Lokomotiv Moscú", "Dinamo Moscú", "FC Rostov", "Akhmat Grozny", "Rubin Kazán", "Fakel Voronezh", "Arsenal Tula", "Pari NN", "Krylia Sovetov Samara", "FC Sochi", "Baltika Kaliningrado", "Orenburg"];
 const ligaMXTeams = ["América", "Atlas", "Cruz Azul", "Guadalajara", "Club León", "Monterrey", "Pachuca", "Tigres UANL", "Toluca", "Santos Laguna", "Puebla", "Querétaro", "UNAM", "Necaxa", "Juárez", "Mazatlán", "San Luis", "Tijuana"];
 const arabiaTeams = ["Al Hilal", "Al Nassr", "Al Ittihad", "Al Ahli", "Al Shabab", "Al Taawoun", "Al Fateh", "Al Ettifaq", "Al Raed", "Abha", "Al Okhdood", "Damac", "Al Fayha", "Al Kholood", "Al Hazm", "Al Qadsiah"];
+const proLeagueBelgicaTeams = ["Club Brugge", "Union Saint-Gilloise", "Anderlecht", "Antwerp", "Genk", "Gent", "Standard Liège", "Mechelen", "OH Leuven", "Charleroi", "Cercle Brugge", "St-Truiden", "Westerlo", "Kortrijk", "RWDM"];
 
 
 
@@ -44,5 +45,9 @@ var teams = {
         ...superligaDinamarca,
         ...superligaSuizaTeams,
         ...allsvenskanTeams,
+        ...ligaPremierRusaTeams,
+        ...ligaMXTeams,
+        ...arabiaTeams,
+        ...proLeagueBelgicaTeams
         ]
 }

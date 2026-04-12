@@ -10,6 +10,14 @@ const division1ArgentinaTeams = ["Argentinos Juniors", "Atlético Tucumán", "Ba
 const serieABrTeams = ["Athletico Paranaense", "Atlético Goianiense", "Atlético Mineiro", "Bahia", "Botafogo", "Corinthians", "Criciúma", "Cruzeiro", "Cuiabá", "Flamengo", "Fluminense", "Fortaleza", "Grêmio", "Internacional", "Juventude", "Palmeiras", "Red Bull Bragantino", "São Paulo", "Sport Recife", "Vasco da Gama"];
 const superLigaTurquiaTeams = ["Adana Demirspor", "Alanyaspor", "Antalyaspor", "Beşiktaş", "Çaykur Rizespor", "Eyüpspor", "Fenerbahçe", "Galatasaray", "Gaziantep FK", "Hatayspor", "İstanbul Başakşehir", "Kasımpaşa", "Konyaspor", "Pendikspor", "Samsunspor", "Sivasspor", "Trabzonspor", "Trendyol 1. Lig Yeni Takımlar"];
 const mlsTeams = ["Atlanta United", "Austin FC", "Charlotte FC", "Chicago Fire FC", "Colorado Rapids", "Columbus Crew", "D.C. United", "FC Cincinnati", "FC Dallas", "Houston Dynamo FC", "Inter Miami CF", "LA Galaxy", "Los Angeles FC", "Minnesota United FC", "CF Montréal", "Nashville SC", "New England Revolution", "New York City FC", "New York Red Bulls", "Orlando City SC", "Philadelphia Union", "Portland Timbers", "Real Salt Lake", "San Jose Earthquakes", "Seattle Sounders FC", "Sporting Kansas City", "St. Louis City SC", "Toronto FC", "Vancouver Whitecaps FC"];
+const eliteserienTeams = ["Bodø/Glimt", "Brann", "Fredrikstad", "HamKam", "Haugesund", "IK Start", "Kristiansund", "Lillestrøm", "Molde", "Odd", "Rosenborg", "Sandefjord", "Sarpsborg 08", "Strømsgodset", "Tromsø", "Viking"];
+const ligaCroaciaTeams = ["Dinamo Zagreb", "Hajduk Split", "NK Osijek", "HNK Rijeka", "NK Lokomotiva", "NK Slaven Belupo", "NK Istra 1961", "NK Varaždin", "NK Zadar", "NK Orijent 1919"];
+const superligaDinamarca = ["FC Copenhagen", "Brøndby IF", "FC Midtjylland", "AGF", "Viborg FF", "FC Nordsjælland", "Silkeborg IF", "Vejle BK", "Randers FC", "Odense BK", "SønderjyskE", "AaB"];
+const superligaSuizaTeams = ["FC Zürich", "Young Boys", "FC Basel", "Servette", "FC Lugano", "FC St. Gallen", "FC Luzern", "FC Winterthur", "Grasshopper", "Yverdon-Sport", "FC Sion", "FC Lausanne-Sport"];
+const allsvenskanTeams = ["AIK", "BK Häcken", "Brommapojkarna", "Djurgårdens IF", "Elfsborg", "GAIS", "Halmstads BK", "Hammarby IF", "IFK Göteborg", "IFK Norrköping", "IFK Värnamo", "IK Sirius", "Kalmar FF", "Malmö FF", "Mjällby AIF", "Västerås SK"];
+const ligaPremierRusaTeams = ["Zenit San Petersburgo", "FC Krasnodar", "CSKA Moscú", "Spartak Moscú", "Lokomotiv Moscú", "Dinamo Moscú", "FC Rostov", "Akhmat Grozny", "Rubin Kazán", "Fakel Voronezh", "Arsenal Tula", "Pari NN", "Krylia Sovetov Samara", "FC Sochi", "Baltika Kaliningrado", "Orenburg"];
+const ligaMXTeams = ["América", "Atlas", "Cruz Azul", "Guadalajara", "Club León", "Monterrey", "Pachuca", "Tigres UANL", "Toluca", "Santos Laguna", "Puebla", "Querétaro", "UNAM", "Necaxa", "Juárez", "Mazatlán", "San Luis", "Tijuana"];
+
 
 var teams = {
     "hockey": ["Anaheim Ducks", "Boston Bruins", "Buffalo Sabres", "Calgary Flames", "Carolina Hurricanes", "Chicago Blackhawks", "Colorado Avalanche", "Columbus Blue Jackets", "Dallas Stars", "Detroit Red Wings", "Edmonton Oilers", "Florida Panthers", "Los Angeles Kings", "Minnesota Wild", "Montreal Canadiens", "Nashville Predators", "New Jersey Devils", "New York Islanders", "New York Rangers", "Ottawa Senators", "Philadelphia Flyers", "Pittsburgh Penguins", "San Jose Sharks", "Seattle Kraken", "St. Louis Blues", "Tampa Bay Lightning", "Toronto Maple Leafs", "Utah Mammoth", "Vancouver Canucks", "Vegas Golden Knights", "Washington Capitals", "Winnipeg Jets"],
@@ -24,6 +32,11 @@ var teams = {
         ...portuguesePrimeiraLigaTeams,
         ...eredivisieTeam,
         ...mlsTeams,
-        ...ligabetplayTeams
+        ...ligabetplayTeams,
+        ...eliteserienTeams,
+        ...ligaCroaciaTeams,
+        ...superligaDinamarca,
+        ...superligaSuizaTeams,
+        ...allsvenskanTeams,
         ]
 }

@@ -25,6 +25,7 @@
                 <label for="sport" class="form-label">Deporte</label>
                 <select id="sport" name="sport" class="form-select" required>
                   <option value="">Selecciona un deporte</option>
+                  <option value="tennis">Tenis</option>
                   <option value="hockey">Hockey</option>
                   <option value="football">Fútbol</option>
                   <option value="basketball">Basketball</option>
@@ -91,9 +92,11 @@
     const sportSelect = document.getElementById("sport");
     const homeTeamInput = document.getElementById("homeTeam");
     const awayTeamInput = document.getElementById("awayTeam");
+    const championshipInput = document.getElementById("championship");
 
     let homeTeamDatalist = document.getElementById("homeTeamList");
     let awayTeamDatalist = document.getElementById("awayTeamList");
+    let championshipDatalist = document.getElementById("championshipList");
 
     if (!homeTeamDatalist) {
       homeTeamDatalist = document.createElement("datalist");
@@ -109,11 +112,20 @@
       awayTeamInput.parentNode.appendChild(awayTeamDatalist);
     }
 
+    if (!championshipDatalist) {
+      championshipDatalist = document.createElement("datalist");
+      championshipDatalist.id = "championshipList";
+      championshipInput.setAttribute("list", "championshipList");
+      championshipInput.parentNode.appendChild(championshipDatalist);
+    }
+
     function updateTeamAutocomplete(sport) {
       const teamList = teams[sport] || [];
+      const championshipListArray = championships[sport] || [];
       
       homeTeamDatalist.innerHTML = "";
       awayTeamDatalist.innerHTML = "";
+      championshipDatalist.innerHTML = "";
 
       teamList.forEach(team => {
         const option1 = document.createElement("option");
@@ -123,6 +135,12 @@
         const option2 = document.createElement("option");
         option2.value = team;
         awayTeamDatalist.appendChild(option2);
+      });
+
+      championshipListArray.forEach(champ => {
+        const option = document.createElement("option");
+        option.value = champ;
+        championshipDatalist.appendChild(option);
       });
     }
 
@@ -134,10 +152,12 @@
       } else {
         homeTeamDatalist.innerHTML = "";
         awayTeamDatalist.innerHTML = "";
+        championshipDatalist.innerHTML = "";
       }
       
       homeTeamInput.value = "";
       awayTeamInput.value = "";
+      championshipInput.value = "";
     });
   </script>
 

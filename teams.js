@@ -1,53 +1,100 @@
-const premierTeams = ["Arsenal", "Aston Villa", "AFC Bournemouth", "Brentford", "Brighton & Hove Albion", "Chelsea", "Crystal Palace", "Everton", "Fulham", "Ipswich Town", "Leicester City", "Liverpool", "Manchester City", "Manchester United", "Newcastle United", "Nottingham Forest", "Southampton", "Tottenham Hotspur", "West Ham United", "Wolverhampton Wanderers"];
-const bundesligaTeams = ["Bayern Munich", "Bayer Leverkusen", "Koln", "VfB Stuttgart", "RB Leipzig", "Borussia Dortmund", "Eintracht Frankfurt", "SC Freiburg", "TSG Hoffenheim", "Werder Bremen", "VfL Wolfsburg", "Union Berlin", "Borussia Mönchengladbach", "FC Augsburg", "Hamburg", "Mainz 05", "VfL Bochum", "1. FC Heidenheim", "FC St. Pauli", "Holstein Kiel"];
-const laLigaTeams = ["Real Madrid", "Barcelona", "Girona", "Atlético de Madrid", "Athletic Club", "Real Sociedad", "Real Betis", "Real Ovideo", "Villarreal", "Valencia", "Getafe", "Osasuna", "Mallorca", "Las Palmas", "Sevilla", "Alavés", "Rayo Vallecano", "Celta de Vigo", "Valladolid", "Leganés", "Espanyol"];
-const ligue1Teams = ["Paris Saint-Germain", "AS Monaco", "Brest", "Lille", "Nice", "Lyon", "Lens", "Marseille", "Rennes", "Toulouse", "Montpellier", "Strasbourg", "Nantes", "Reims", "Le Havre", "Auxerre", "Angers", "Saint-Étienne"];
-const serieAITTeams = ["Atalanta", "Bologna", "Cagliari", "Como", "Empoli", "Fiorentina", "Genoa", "Inter Milan", "Juventus", "AC Milan", "Monza", "Napoli", "Parma", "Roma", "Lazio", "Torino", "Udinese", "Venezia", "Verona", "Lecce"];
-const ligabetplayTeams = ["Alianza FC", "Atlético Nacional", "Deportivo Cali", "Millonarios", "América de Cali", "Independiente Santa Fe", "Independiente Medellín", "Internacional de Bogotá", "Junior", "Llaneros", "Once Caldas", "La Equidad", "Deportes Tolima", "Envigado", "Patriotas", "Águilas Doradas", "Jaguares de Córdoba", "Deportivo Pereira", "Atlético Bucaramanga", "Fortaleza CEIF", "Unión Magdalena", "Real Cartagena", "Boyacá Chicó"];
-const portuguesePrimeiraLigaTeams = ["Benfica", "Porto", "Sporting CP", "AVS", "Arouca", "Boavista", "Braga", "Casa Pia", "Estoril Praia", "Estrela da Amadora", "Farense", "Famalicão", "Gil Vicente", "Moreirense", "Nacional", "Rio Ave", "Santa Clara", "Vitória SC"];
-const eredivisieTeam = ["AFC Ajax", "AZ Alkmaar", "Almere City FC", "Feyenoord", "Fortuna Sittard", "FC Groningen", "Go Ahead Eagles", "Heerenveen", "Heracles Almelo", "NAC Breda", "NEC Nijmegen", "PEC Zwolle", "PSV Eindhoven", "RKC Waalwijk", "Sparta Rotterdam", "FC Twente", "FC Utrecht", "Willem II"];
-const division1ArgentinaTeams = ["Argentinos Juniors", "Atlético Tucumán", "Banfield", "Barracas Central", "Belgrano", "Boca Juniors", "Central Córdoba", "Defensa y Justicia", "Deportivo Riestra", "Estudiantes de La Plata", "Gimnasia y Esgrima La Plata", "Godoy Cruz", "Huracán", "Independiente", "Independiente Rivadavia", "Instituto", "Lanús", "Newell's Old Boys", "Platense", "Racing Club", "River Plate", "Rosario Central", "San Lorenzo", "Sarmiento", "Talleres", "Tigre", "Unión", "Vélez Sarsfield"];
-const serieABrTeams = ["Athletico Paranaense", "Atlético Goianiense", "Atlético Mineiro", "Bahia", "Botafogo", "Corinthians", "Criciúma", "Cruzeiro", "Cuiabá", "Flamengo", "Fluminense", "Fortaleza", "Grêmio", "Internacional", "Juventude", "Palmeiras", "Red Bull Bragantino", "São Paulo", "Sport Recife", "Vasco da Gama"];
-const superLigaTurquiaTeams = ["Adana Demirspor", "Alanyaspor", "Antalyaspor", "Beşiktaş", "Çaykur Rizespor", "Eyüpspor", "Fenerbahçe", "Galatasaray", "Gaziantep FK", "Hatayspor", "İstanbul Başakşehir", "Kasımpaşa", "Konyaspor", "Pendikspor", "Samsunspor", "Sivasspor", "Trabzonspor", "Trendyol 1. Lig Yeni Takımlar"];
-const mlsTeams = ["Atlanta United", "Austin FC", "Charlotte FC", "Chicago Fire FC", "Colorado Rapids", "Columbus Crew", "D.C. United", "FC Cincinnati", "FC Dallas", "Houston Dynamo FC", "Inter Miami CF", "LA Galaxy", "Los Angeles FC", "Minnesota United FC", "CF Montréal", "Nashville SC", "New England Revolution", "New York City FC", "New York Red Bulls", "Orlando City SC", "Philadelphia Union", "Portland Timbers", "Real Salt Lake", "San Jose Earthquakes", "Seattle Sounders FC", "Sporting Kansas City", "St. Louis City SC", "Toronto FC", "Vancouver Whitecaps FC"];
-const eliteserienTeams = ["Bodø/Glimt", "Brann", "Fredrikstad", "HamKam", "Haugesund", "IK Start", "Kristiansund", "Lillestrøm", "Molde", "Odd", "Rosenborg", "Sandefjord", "Sarpsborg 08", "Strømsgodset", "Tromsø", "Viking"];
-const ligaCroaciaTeams = ["Dinamo Zagreb", "Hajduk Split", "NK Osijek", "HNK Gorica", "HNK Rijeka", "HNK Vukovar 1991", "NK Lokomotiva", "NK Slaven Belupo", "NK Istra 1961", "NK Varaždin", "NK Zadar", "NK Orijent 1919"];
-const superligaDinamarca = ["FC Copenhagen", "Brøndby IF", "FC Midtjylland", "AGF", "Viborg FF", "FC Nordsjælland", "Silkeborg IF", "Vejle BK", "Randers FC", "Odense BK", "SønderjyskE", "AaB"];
-const superligaSuizaTeams = ["FC Zürich", "Young Boys", "FC Basel", "Servette", "FC Lugano", "FC St. Gallen", "FC Luzern", "FC Winterthur", "Grasshopper", "Yverdon-Sport", "FC Sion", "FC Lausanne-Sport"];
-const allsvenskanTeams = ["AIK", "BK Häcken", "Brommapojkarna", "Djurgårdens IF", "Elfsborg", "GAIS", "Halmstads BK", "Hammarby IF", "IFK Göteborg", "IFK Norrköping", "IFK Värnamo", "IK Sirius", "Kalmar FF", "Malmö FF", "Mjällby AIF", "Västerås SK"];
-const ligaPremierRusaTeams = ["Zenit San Petersburgo", "FC Krasnodar", "CSKA Moscú", "Spartak Moscú", "Lokomotiv Moscú", "Dinamo Moscú", "FC Rostov", "Akhmat Grozny", "Rubin Kazán", "Fakel Voronezh", "Arsenal Tula", "Pari NN", "Krylia Sovetov Samara", "FC Sochi", "Baltika Kaliningrado", "Orenburg"];
-const ligaMXTeams = ["América", "Atlas", "Cruz Azul", "Guadalajara", "Club León", "Monterrey", "Pachuca", "Tigres UANL", "Toluca", "Santos Laguna", "Puebla", "Querétaro", "UNAM", "Necaxa", "Juárez", "Mazatlán", "San Luis", "Tijuana"];
-const arabiaTeams = ["Al Hilal", "Al Nassr", "Al Ittihad", "Al Ahli", "Al Shabab", "Al Taawoun", "Al Fateh", "Al Ettifaq", "Al Raed", "Abha", "Al Okhdood", "Damac", "Al Fayha", "Al Kholood", "Al Hazm", "Al Qadsiah"];
-const proLeagueBelgicaTeams = ["Club Brugge", "Union Saint-Gilloise", "Anderlecht", "Antwerp", "Genk", "Gent", "Standard Liège", "Mechelen", "OH Leuven", "Charleroi", "Cercle Brugge", "St-Truiden", "Westerlo", "Kortrijk", "RWDM"];
+const uefaTier1_1 = ["Arsenal", "Aston Villa", "Bournemouth", "Brentford", "Brighton & Hove Albion", "Chelsea", "Crystal Palace", "Everton", "Fulham", "Ipswich Town", "Leicester City", "Liverpool", "Manchester City", "Manchester United", "Newcastle United", "Nottingham Forest", "Southampton", "Tottenham Hotspur", "West Ham United", "Wolverhampton Wanderers"];
+const uefaTier1_2 = ["Alavés", "Athletic Club", "Atlético Madrid", "Barcelona", "Celta Vigo", "Espanyol", "Getafe", "Girona", "Las Palmas", "Leganés", "Mallorca", "Osasuna", "Rayo Vallecano", "Real Betis", "Real Madrid", "Real Sociedad", "Sevilla", "Valencia", "Valladolid", "Villarreal"];
+const uefaTier1_3 = ["Atalanta", "Bologna", "Cagliari", "Como", "Empoli", "Fiorentina", "Genoa", "Hellas Verona", "Inter Milan", "Juventus", "Lazio", "Lecce", "AC Milan", "Monza", "Napoli", "Parma", "Roma", "Torino", "Udinese", "Venezia"];
+const uefaTier1_4 = ["Augsburg", "Bayer Leverkusen", "Bayern Munich", "Bochum", "Werder Bremen", "Borussia Dortmund", "Eintracht Frankfurt", "Freiburg", "Heidenheim", "Hoffenheim", "Holstein Kiel", "RB Leipzig", "Mainz 05", "Borussia Mönchengladbach", "St. Pauli", "VfB Stuttgart", "Union Berlin", "VfL Wolfsburg"];
+const uefaTier1_5 = ["Angers", "Auxerre", "Brest", "Le Havre", "Lens", "Lille", "Lyon", "Marseille", "Monaco", "Montpellier", "Nantes", "Nice", "Paris Saint-Germain", "Reims", "Rennes", "Saint-Étienne", "Strasbourg", "Toulouse"];
 
+const uefaTier2_1 = ["Ajax", "Almere City", "AZ", "Feyenoord", "Fortuna Sittard", "Go Ahead Eagles", "Groningen", "Heerenveen", "Heracles Almelo", "NAC Breda", "NEC", "PEC Zwolle", "PSV", "RKC Waalwijk", "Sparta Rotterdam", "Twente", "Utrecht", "Willem II"];
+const uefaTier2_2 = ["Arouca", "AVS", "Benfica", "Boavista", "Braga", "Casa Pia", "Estoril", "Estrela da Amadora", "Famalicão", "Farense", "Gil Vicente", "Moreirense", "Nacional", "Porto", "Rio Ave", "Santa Clara", "Sporting CP", "Vitória de Guimarães"];
+const uefaTier2_3 = ["Anderlecht", "Antwerp", "Beerschot", "Cercle Brugge", "Charleroi", "Club Brugge", "Dender", "Genk", "Gent", "Kortrijk", "Mechelen", "OH Leuven", "Sint-Truiden", "Standard Liège", "Union SG", "Westerlo"];
+const uefaTier2_4 = ["Adana Demirspor", "Alanyaspor", "Antalyaspor", "Beşiktaş", "Bodrum", "Eyüpspor", "Fenerbahçe", "Galatasaray", "Gaziantep", "Göztepe", "Hatayspor", "Kasımpaşa", "Kayserispor", "Konyaspor", "Rizespor", "Samsunspor", "Sivasspor", "Trabzonspor"];
+const uefaTier2_5 = ["Aberdeen", "Celtic", "Dundee", "Dundee United", "Heart of Midlothian", "Hibernian", "Kilmarnock", "Motherwell", "Rangers", "Ross County", "St Johnstone", "St Mirren"];
 
+const uefaTier3_1 = ["Red Bull Salzburg", "Sturm Graz", "LASK", "Rapid Wien", "Hartberg", "Austria Klagenfurt", "Wolfsberger AC", "Austria Wien", "BW Linz", "Altach", "WSG Tirol", "GAK"];
+const uefaTier3_2 = ["Young Boys", "Lugano", "Servette", "Zürich", "St. Gallen", "Winterthur", "Luzern", "Basel", "Yverdon-Sport", "Lausanne-Sport", "Grasshoppers", "Sion"];
+const uefaTier3_3 = ["Crvena Zvezda", "Partizan", "TSC", "Vojvodina", "Radnički 1923", "Čukarički", "Mladost Lučani", "Napredak Kruševac", "Novi Pazar", "Spartak Subotica", "Radnički Niš", "IMT", "Železničar Pančevo", "Jedinstvo Ub", "OFK Beograd", "Tekstilac Odžaci"];
+const uefaTier3_4 = ["Shakhtar Donetsk", "Dynamo Kyiv", "Kryvbas", "Polissya Zhytomyr", "Rukh Lviv", "LNZ Cherkasy", "Oleksandriya", "Chornomorets Odesa", "Vorskla Poltava", "Zorya Luhansk", "Kolos Kovalivka", "Obolon Kyiv", "Veres Rivne", "Livyi Bereh", "Ingulets Petrove", "Karpaty Lviv"];
+const uefaTier3_5 = ["Bodø/Glimt", "Brann", "Tromsø", "Viking", "Molde", "Lillestrøm", "Strømsgodset", "Sarpsborg 08", "Rosenborg", "Odd", "HamKam", "Haugesund", "Sandefjord", "Fredrikstad", "KFUM Oslo", "Kristiansund"];
+const uefaTier3_6 = ["Midtjylland", "Brøndby", "Copenhagen", "Nordsjælland", "AGF", "Silkeborg", "Randers", "Viborg", "Vejle", "Lyngby", "Sønderjyske", "AaB"];
+const uefaTier3_7 = ["Sparta Prague", "Slavia Prague", "Viktoria Plzeň", "Baník Ostrava", "Mladá Boleslav", "Slovácko", "Slovan Liberec", "Sigma Olomouc", "Hradec Králové", "Teplice", "Bohemians 1905", "Jablonec", "Pardubice", "Karviná", "Dukla Prague", "České Budějovice"];
+const uefaTier3_8 = ["PAOK", "AEK Athens", "Olympiacos", "Panathinaikos", "Aris", "Lamia", "Asteras Tripolis", "Atromitos", "Panserraikos", "OFI", "Panetolikos", "Volos", "Levadiakos", "Athens Kallithea"];
+const uefaTier3_9 = ["Dinamo Zagreb", "Rijeka", "Hajduk Split", "Osijek", "Lokomotiva", "Varaždin", "Gorica", "Istra 1961", "Slaven Belupo", "Šibenik"];
+const uefaTier3_10 = ["Jagiellonia Białystok", "Śląsk Wrocław", "Legia Warsaw", "Pogoń Szczecin", "Lech Poznań", "Górnik Zabrze", "Raków Częstochowa", "Zagłębie Lubin", "Widzew Łódź", "Piast Gliwice", "Stal Mielec", "Puszcza Niepołomice", "Cracovia", "Korona Kielce", "Radomiak Radom", "Lechia Gdańsk", "GKS Katowice", "Motor Lublin"];
+const uefaTier3_11 = ["Malmö FF", "Elfsborg", "Häcken", "Djurgården", "Värnamo", "Kalmar FF", "Hammarby", "Sirius", "Norrköping", "Mjällby", "AIK", "Halmstad", "IFK Göteborg", "Brommapojkarna", "Västerås SK", "GAIS"];
 
+const uefaRest1 = ["APOEL", "AEK Larnaca", "Omonia", "Aris Limassol", "Pafos", "Anorthosis", "Apollon Limassol", "AEL Limassol", "Nea Salamis", "Ethnikos Achna", "Karmiotissa", "Omonia 29M", "Omonia Aradippou", "Enosis Neon Paralimni"];
+const uefaRest2 = ["Ferencváros", "Paks", "Puskás Akadémia", "Fehérvár", "Debrecen", "Kecskemét", "Diósgyőr", "MTK Budapest", "Zalaegerszeg", "Újpest", "Nyíregyháza Spartacus", "Győr"];
+const uefaRest3 = ["FCSB", "CFR Cluj", "Universitatea Craiova", "Farul Constanța", "Sepsi OSK", "Rapid București", "UTA Arad", "Oțelul Galați", "Hermannstadt", "Universitatea Cluj", "Petrolul Ploiești", "Politehnica Iași", "Dinamo București", "Botoșani", "Unirea Slobozia", "Gloria Buzău"];
+const uefaRest4 = ["Ludogorets Razgrad", "Cherno More", "CSKA Sofia", "Levski Sofia", "Lokomotiv Plovdiv", "Krumovgrad", "Botev Plovdiv", "CSKA 1948", "Arda", "Slavia Sofia", "Beroe", "Lokomotiv Sofia", "Hebar", "Botev Vratsa", "Spartak Varna", "Septemvri Sofia"];
+const uefaRest5 = ["Slovan Bratislava", "DAC Dunajská Streda", "Spartak Trnava", "Žilina", "Ružomberok", "Podbrezová", "Dukla Banská Bystrica", "Trenčín", "Skalica", "Zlaté Moravce", "Košice", "Zemplín Michalovce", "Komárno"];
 
-var teams = {
+const amsTier1_1 = ["Athletico Paranaense", "Atlético Goianiense", "Atlético Mineiro", "Bahia", "Botafogo", "Corinthians", "Criciúma", "Cruzeiro", "Cuiabá", "Flamengo", "Fluminense", "Fortaleza", "Grêmio", "Internacional", "Juventude", "Palmeiras", "Red Bull Bragantino", "São Paulo", "Vasco da Gama", "Vitória"];
+const amsTier1_2 = ["Argentinos Juniors", "Atlético Tucumán", "Banfield", "Barracas Central", "Belgrano", "Boca Juniors", "Central Córdoba", "Defensa y Justicia", "Deportivo Riestra", "Estudiantes", "Gimnasia y Esgrima", "Godoy Cruz", "Huracán", "Independiente", "Independiente Rivadavia", "Instituto", "Lanús", "Newell's Old Boys", "Platense", "Racing", "River Plate", "Rosario Central", "San Lorenzo", "Sarmiento", "Talleres", "Tigre", "Unión", "Vélez Sarsfield"];
+const amsTier1_3 = ["Atlanta United", "Austin FC", "Charlotte FC", "Chicago Fire", "Colorado Rapids", "Columbus Crew", "FC Cincinnati", "FC Dallas", "D.C. United", "Houston Dynamo", "Inter Miami", "LA Galaxy", "Los Angeles FC", "Minnesota United", "CF Montréal", "Nashville SC", "New England Revolution", "New York City FC", "New York Red Bulls", "Orlando City", "Philadelphia Union", "Portland Timbers", "Real Salt Lake", "San Jose Earthquakes", "Seattle Sounders", "Sporting Kansas City", "St. Louis City", "Toronto FC", "Vancouver Whitecaps"];
+const amsTier1_4 = ["América", "Atlas", "Atlético San Luis", "Cruz Azul", "Guadalajara", "Juárez", "León", "Mazatlán", "Monterrey", "Necaxa", "Pachuca", "Puebla", "Querétaro", "Santos Laguna", "Tijuana", "Toluca", "UANL", "UNAM"];
+const amsTier1_5 = ["Alianza", "América de Cali", "Atlético Bucaramanga", "Atlético Nacional", "Boyacá Chicó", "Deportes Tolima", "Deportivo Cali", "Deportivo Pasto", "Deportivo Pereira", "Envigado", "Fortaleza CEIF", "Independiente Medellín", "Jaguares", "Junior", "La Equidad", "Millonarios", "Once Caldas", "Patriotas", "Santa Fe", "Águilas Doradas"];
+
+const amsRest = ["Peñarol", "Nacional (URU)", "Defensor Sporting", "Liverpool (URU)", "Danubio", "Colo-Colo", "Universidad de Chile", "Universidad Católica", "Huachipato", "Cobreloa", "Independiente del Valle", "Liga de Quito", "Barcelona SC", "Emelec", "Aucas", "Cerro Porteño", "Olimpia", "Libertad", "Guaraní", "Nacional (PAR)", "Universitario", "Alianza Lima", "Sporting Cristal", "Melgar", "Cienciano", "The Strongest", "Bolívar", "Always Ready", "Oriente Petrolero", "Jorge Wilstermann"];
+const rowRest = ["Al Hilal", "Al Nassr", "Al Ittihad", "Al Ahli", "Al Shabab", "Al Taawoun", "Al Ettifaq", "Vissel Kobe", "Yokohama F. Marinos", "Kawasaki Frontale", "Urawa Red Diamonds", "Kashima Antlers", "Ulsan HD", "Pohang Steelers", "Jeonbuk Hyundai Motors", "FC Seoul", "Sydney FC", "Melbourne City", "Melbourne Victory", "Mamelodi Sundowns", "Orlando Pirates", "Kaizer Chiefs", "Al Ahly", "Zamalek", "Pyramids", "Raja CA", "Wydad AC", "RS Berkane", "Shanghai Port", "Shanghai Shenhua", "Shandong Taishan", "Al Sadd", "Al Duhail", "Al Rayyan", "Al Ain", "Al Wasl", "Shabab Al Ahli"];
+
+// Second divisions (top 30)
+const sdTier1 = ["Blackburn Rovers", "Bristol City", "Burnley", "Cardiff City", "Coventry City", "Derby County", "Hull City", "Leeds United", "Luton Town", "Middlesbrough", "Millwall", "Norwich City", "Oxford United", "Plymouth Argyle", "Portsmouth", "Preston North End", "Queens Park Rangers", "Sheffield United", "Sheffield Wednesday", "Stoke City", "Sunderland", "Swansea City", "Watford", "West Bromwich Albion"];
+const sdTier2 = ["Albacete", "Almería", "Burgos", "Cádiz", "Cartagena", "Castellón", "Córdoba", "Deportivo La Coruña", "Eibar", "Elche", "Eldense", "Ferrol", "Granada", "Huesca", "Levante", "Málaga", "Mirandés", "Oviedo", "Racing Santander", "Sporting Gijón", "Tenerife", "Zaragoza"];
+const sdTier3 = ["Bari", "Brescia", "Carrarese", "Catanzaro", "Cesena", "Cittadella", "Cosenza", "Cremonese", "Frosinone", "Juve Stabia", "Mantova", "Modena", "Palermo", "Pisa", "Reggiana", "Salernitana", "Sampdoria", "Sassuolo", "Spezia", "Südtirol"];
+const sdTier4 = ["1. FC Köln", "1. FC Magdeburg", "1. FC Nürnberg", "Darmstadt 98", "Eintracht Braunschweig", "Fortuna Düsseldorf", "Greuther Fürth", "Hannover 96", "Hansa Rostock", "Hertha BSC", "Karlsruher SC", "Preußen Münster", "Schalke 04", "SSV Jahn Regensburg", "SSV Ulm", "SV Elversberg", "SV Sandhausen", "VfL Osnabrück"];
+const sdTier5 = ["Ajaccio", "Amiens", "Annecy", "Bastia", "Caen", "Clermont", "Dunkerque", "Guingamp", "Laval", "Lorient", "Martigues", "Metz", "Paris FC", "Pau", "Red Star", "Rodez", "Troyes", "Metz"];
+const sdTier6 = ["ADO Den Haag", "Cambuur", "De Graafschap", "Dordrecht", "Eindhoven", "Emmen", "Excelsior", "Helmond Sport", "Jong Ajax", "Jong AZ", "Jong PSV", "Jong FC Utrecht", "MVV Maastricht", "Roda JC", "Telstar", "TOP Oss", "Vitesse", "VVV-Venlo", "FC Volendam"];
+const sdTier7 = ["Académico de Viseu", "Alverca", "Chaves", "Feirense", "Felgueiras", "Leixões", "Mafra", "Marítimo", "Oliveirense", "Paços de Ferreira", "Penafiel", "Portimonense", "Porto B", "Tondela", "Torreense", "União de Leiria", "Vizela", "Benfica B"];
+const sdTier8 = ["Club NXT", "Deinze", "Eupen", "Francs Borains", "Jong Genk", "La Louvière", "Lierse", "Lokeren-Temse", "Lommel", "Patro Eisden", "RSCA Futures", "RWDM", "Seraing", "SL 16 FC", "RFC Liège", "Zulte Waregem"];
+const sdTier9 = ["Amed SK", "Ankaragücü", "Bandırmaspor", "Boluspor", "Çorum FK", "Erzurumspor", "Esenler Erokspor", "Fatih Karagümrük", "Gençlerbirliği", "Iğdır", "İstanbulspor", "Keçiörengücü", "Kocaelispor", "Manisa FK", "Pendikspor", "Sakaryaspor", "Şanlıurfaspor", "Ümraniyespor", "Yeni Malatyaspor"];
+const sdTier10 = ["Airdrieonians", "Ayr United", "Dunfermline Athletic", "Falkirk", "Greenock Morton", "Hamilton Academical", "Livingston", "Partick Thistle", "Queen's Park", "Raith Rovers"];
+
+const sdRest = ["Admira Wacker", "Amstetten", "Bregenz", "First Vienna", "Floridsdorfer AC", "Kapfenberg", "Lafnitz", "Liefering", "Ried", "St. Pölten", "Sturm Graz II", "SV Horn", "Stripfing", "Voitsberg", "Aarau", "Bellinzona", "Étoile Carouge", "Neuchâtel Xamax", "Nyon", "Schaffhausen", "Thun", "Vaduz", "Wil", "Javor", "Mačva", "Metalac", "Radnik Surdulica", "Smederevo", "Bukovyna", "Epitsentr", "Metalist 1925", "Minaj", "Nyva Ternopil", "Aalesund", "Bryne", "Kongsvinger", "Lyn", "Sogndal", "Stabæk", "Vålerenga", "Aalborg", "Hobro", "Horsens", "Kolding", "OB", "Brno", "Opava", "Táborsko", "Vlašim", "Zlín", "Iraklis", "AEL", "Niki Volos", "Makedonikos", "Cibalia", "Croatia Zmijavci", "Dugopolje", "Rudeš", "Arka Gdynia", "Bruk-Bet Termalica", "GKS Tychy", "Miedź Legnica", "Odra Opole", "Polonia Warsaw", "Stal Rzeszów", "Wisła Kraków", "Wisła Płock", "Znicz Pruszków", "Degerfors", "Gefle", "Helsingborg", "Landskrona", "Örebro", "Öster", "Sandviken", "Utsikten", "Digenis", "Othellos", "Honvéd", "Kisvárda", "Mezőkövesd", "Vasas", "Argeș", "Chindia", "Ceahlăul", "Corvinul", "Steaua București", "Voluntari", "Dobrudzha", "Etar", "Montana", "Pirin", "Petržalka", "Pohronie", "Prešov", "Shamakhi", "Atyrau", "Aluminij", "Nafta", "Florești"];
+
+// Tennis ATP (Men) & WTA (Women)
+const tennisPlayers_atp = ["Jannik Sinner", "Carlos Alcaraz", "Novak Djokovic", "Daniil Medvedev", "Alexander Zverev", "Andrey Rublev", "Casper Ruud", "Hubert Hurkacz", "Alex de Minaur", "Grigor Dimitrov", "Stefanos Tsitsipas", "Taylor Fritz", "Tommy Paul", "Ben Shelton", "Holger Rune", "Ugo Humbert", "Alexander Bublik", "Felix Auger-Aliassime", "Sebastian Baez", "Nicolas Jarry", "Adrian Mannarino", "Jiri Lehecka", "Tallon Griekspoor", "Sebastian Korda", "Tomas Martin Etcheverry", "Lorenzo Musetti", "Cameron Norrie", "Arthur Fils", "Mariano Navone", "Jack Draper", "Frances Tiafoe", "Alejandro Tabilo", "Matteo Arnaldi", "Tomas Machac", "Jan-Lennard Struff", "Roman Safiullin", "Gael Monfils", "Jordan Thompson", "Marcos Giron", "Pedro Martinez", "Zhizhen Zhang", "Nuno Borges", "Alexei Popyrin", "Aslan Karatsev", "Fabian Marozsan", "Miomir Kecmanovic", "Dusan Lajovic", "Flavio Cobolli", "Alex Michelsen", "Corentin Moutet", "Alexander Shevchenko", "Yoshihito Nishioka", "Roberto Carballes Baena", "Taro Daniel", "Emil Ruusuvuori", "Dominik Koepfer", "Arthur Rinderknech", "Thiago Seyboth Wild", "Botic van de Zandschulp", "Daniel Altmaier", "Pavel Kotov", "Lorenzo Sonego", "Sumit Nagal", "Rinky Hijikata", "Hugo Gaston", "Facundo Diaz Acosta", "Christopher O'Connell", "Roberto Bautista Agut", "Federico Coria", "Arthur Cazaux", "Max Purcell", "Aleksandar Vukic", "Jakub Mensik", "Stan Wawrinka", "Andy Murray", "Rafael Nadal"];
+const tennisPlayers_wta = ["Iga Swiatek", "Aryna Sabalenka", "Coco Gauff", "Elena Rybakina", "Jessica Pegula", "Marketa Vondrousova", "Maria Sakkari", "Zheng Qinwen", "Ons Jabeur", "Jelena Ostapenko", "Daria Kasatkina", "Danielle Collins", "Madison Keys", "Jasmine Paolini", "Ekaterina Alexandrova", "Liudmila Samsonova", "Elina Svitolina", "Marta Kostyuk", "Emma Navarro", "Anastasia Pavlyuchenkova", "Caroline Garcia", "Beatriz Haddad Maia", "Anna Kalinskaya", "Victoria Azarenka", "Linda Noskova", "Sorana Cirstea", "Katie Boulter", "Dayana Yastremska", "Elise Mertens", "Katerina Siniakova", "Leylah Fernandez", "Veronika Kudermetova", "Marie Bouzkova", "Karolina Pliskova", "Donna Vekic", "Mirra Andreeva", "Sloane Stephens", "Anastasia Potapova", "Clara Burel", "Yuan Yue", "Magda Linette", "Peyton Stearns", "Elisabetta Cocciaretto", "Xinyu Wang", "Sofia Kenin", "Magdalena Frech", "Diane Parry", "Anna Blinkova", "Lucia Bronzetti", "Nadia Podoroska", "Lesia Tsurenko", "Yulia Putintseva", "Petra Martic", "Xiyu Wang", "Elina Avanesyan", "Mayar Sherif", "Camila Osorio", "Paula Badosa", "Naomi Osaka", "Emma Raducanu", "Angelique Kerber", "Caroline Wozniacki"];
+
+// Basketball
+const nbaTeams = ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"];
+const wnbaTeams = ["Atlanta Dream", "Chicago Sky", "Connecticut Sun", "Dallas Wings", "Indiana Fever", "Las Vegas Aces", "Los Angeles Sparks", "Minnesota Lynx", "New York Liberty", "Phoenix Mercury", "Seattle Storm", "Washington Mystics", "Golden State Valkyries"];
+const euroleagueTeams = ["Real Madrid", "Panathinaikos AKTOR Athens", "Olympiacos Piraeus", "Fenerbahce Beko Istanbul", "AS Monaco", "FC Barcelona", "Maccabi Playtika Tel Aviv", "Baskonia Vitoria-Gasteiz", "Virtus Segafredo Bologna", "Anadolu Efes Istanbul", "Partizan Mozzart Bet Belgrade", "EA7 Emporio Armani Milan", "Zalgiris Kaunas", "FC Bayern Munich", "Crvena Zvezda Meridianbet Belgrade", "LDLC ASVEL Villeurbanne", "ALBA Berlin", "Paris Basketball"];
+
+const teams = {
     "hockey": ["Anaheim Ducks", "Boston Bruins", "Buffalo Sabres", "Calgary Flames", "Carolina Hurricanes", "Chicago Blackhawks", "Colorado Avalanche", "Columbus Blue Jackets", "Dallas Stars", "Detroit Red Wings", "Edmonton Oilers", "Florida Panthers", "Los Angeles Kings", "Minnesota Wild", "Montreal Canadiens", "Nashville Predators", "New Jersey Devils", "New York Islanders", "New York Rangers", "Ottawa Senators", "Philadelphia Flyers", "Pittsburgh Penguins", "San Jose Sharks", "Seattle Kraken", "St. Louis Blues", "Tampa Bay Lightning", "Toronto Maple Leafs", "Utah Mammoth", "Vancouver Canucks", "Vegas Golden Knights", "Washington Capitals", "Winnipeg Jets"],
-    "basketball": ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"],
+    "basketball": Array.from(new Set([
+        ...nbaTeams,
+        ...wnbaTeams,
+        ...euroleagueTeams
+    ])),
     "baseball": ["Arizona Diamondbacks", "Atlanta Braves", "Baltimore Orioles", "Boston Red Sox", "Chicago Cubs", "Chicago White Sox", "Cincinnati Reds", "Cleveland Guardians", "Colorado Rockies", "Detroit Tigers", "Houston Astros", "Kansas City Royals", "Los Angeles Angels", "Los Angeles Dodgers", "Miami Marlins", "Milwaukee Brewers", "Minnesota Twins", "New York Mets", "New York Yankees", "Oakland Athletics", "Philadelphia Phillies", "Pittsburgh Pirates", "San Diego Padres", "San Francisco Giants", "Seattle Mariners", "St. Louis Cardinals", "Tampa Bay Rays", "Texas Rangers", "Toronto Blue Jays", "Washington Nationals"],
+    "football": Array.from(new Set([
+        ...uefaTier1_1, ...uefaTier1_2, ...uefaTier1_3, ...uefaTier1_4, ...uefaTier1_5,
+        ...uefaTier2_1, ...uefaTier2_2, ...uefaTier2_3, ...uefaTier2_4, ...uefaTier2_5,
+        ...uefaTier3_1, ...uefaTier3_2, ...uefaTier3_3, ...uefaTier3_4, ...uefaTier3_5,
+        ...uefaTier3_6, ...uefaTier3_7, ...uefaTier3_8, ...uefaTier3_9, ...uefaTier3_10,
+        ...uefaTier3_11, ...uefaRest1, ...uefaRest2, ...uefaRest3, ...uefaRest4, ...uefaRest5,
+        ...amsTier1_1, ...amsTier1_2, ...amsTier1_3, ...amsTier1_4, ...amsTier1_5,
+        ...amsRest, ...rowRest,
+        ...sdTier1, ...sdTier2, ...sdTier3, ...sdTier4, ...sdTier5,
+        ...sdTier6, ...sdTier7, ...sdTier8, ...sdTier9, ...sdTier10,
+        ...sdRest
+    ])),
+    "tennis": Array.from(new Set([
+        ...tennisPlayers_atp, ...tennisPlayers_wta
+    ]))
+};
+
+const championships = {
+    "hockey": ["NHL", "AHL", "KHL", "SHL", "Liiga", "NLA", "DEL", "World Championship", "Winter Olympics"],
+    "basketball": ["NBA", "WNBA", "EuroLeague", "EuroCup", "FIBA World Cup", "Olympics", "Liga ACB", "LNB Pro A", "BBL"],
+    "baseball": ["MLB", "NPB", "KBO", "LMB", "World Baseball Classic", "Caribbean Series"],
     "football": [
-        ...premierTeams,
-        ...bundesligaTeams,
-        ...laLigaTeams,
-        ...ligue1Teams,
-        ...serieAITTeams,
-        ...portuguesePrimeiraLigaTeams,
-        ...eredivisieTeam,
-        ...division1ArgentinaTeams,
-        ...serieABrTeams,
-        ...superLigaTurquiaTeams,
-        ...mlsTeams,
-        ...ligabetplayTeams,
-        ...eliteserienTeams,
-        ...ligaCroaciaTeams,
-        ...superligaDinamarca,
-        ...superligaSuizaTeams,
-        ...allsvenskanTeams,
-        ...ligaPremierRusaTeams,
-        ...ligaMXTeams,
-        ...arabiaTeams,
-        ...proLeagueBelgicaTeams
-        ]
-}
+        "Premier League", "La Liga", "Serie A", "Bundesliga", "Ligue 1", 
+        "Eredivisie", "Primeira Liga", "Brasileirão", "Liga Profesional Argentina",
+        "MLS", "Liga MX", "Copa Libertadores", "Copa Sudamericana",
+        "UEFA Champions League", "UEFA Europa League", "UEFA Conference League",
+        "FIFA World Cup", "UEFA Euro", "Copa America", "AFCON", "Asian Cup"
+    ],
+    "tennis": ["Australian Open", "Roland Garros", "Wimbledon", "US Open", "ATP Finals", "WTA Finals", "ATP Masters 1000", "WTA 1000", "ATP 500", "WTA 500", "ATP 250", "WTA 250", "Davis Cup", "Billie Jean King Cup", "Olympics"]
+};

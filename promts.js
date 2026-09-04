@@ -87,6 +87,8 @@ Focus on high-value markets:
 - Over/Under Goals
 - Both Teams to Score
 - First Half markets
+- Match Winner (Moneyline)
+- Over/Under Corners
 
 COMBO RULE:
 Only suggest combo bets if EACH selection has positive EV individually.

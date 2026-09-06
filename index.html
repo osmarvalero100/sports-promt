@@ -200,7 +200,14 @@
 
       const fixtureInfo = fixtureInfoLines.join("\n");
       const selectedPrompt = PREDICTION_PROMPTS[sport] || PREDICTION_PROMPTS.general;
-      const generatedPrompt = selectedPrompt.replace("{fixture_info}", fixtureInfo);
+
+      const leagueSpecialistNote = championship
+        ? ` You are also a specialist analyst in ${championship}, with extensive knowledge of this competition's teams/players, playing styles, history, and trends.`
+        : "";
+
+      const generatedPrompt = selectedPrompt
+        .replace("{fixture_info}", fixtureInfo)
+        .replace("{league_specialist_note}", leagueSpecialistNote);
 
       result.value = generatedPrompt;
       downloadButton.disabled = false;

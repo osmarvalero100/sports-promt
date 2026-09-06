@@ -115,7 +115,7 @@ IMPORTANT RULES:
 - Estimate TRUE probability (%) of outcomes.
 - Calculate Expected Value using: EV = (True_probability × Odds) - 1
 - ONLY recommend bets with real EV ≥ 5%.
-- If the teams have played fewer than 6-8 league matches this season, raise the minimum required EV to 6.5%.
+- If the teams have played fewer than 4-8 league matches this season, raise the minimum required EV to 6.5%.
 - If no bet meets the EV threshold → output EXACTLY and ONLY the words "NO BET". Do not output the response format or any reasoning.
 - DO NOT include any conversational filler, introductions, or conclusions. Provide ONLY the requested RESPONSE FORMAT.
 - Avoid bias toward favorites or public opinion.

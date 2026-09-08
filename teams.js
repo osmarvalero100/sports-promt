@@ -61,7 +61,16 @@ const wnbaTeams = ["Atlanta Dream", "Chicago Sky", "Connecticut Sun", "Dallas Wi
 const euroleagueTeams = ["Real Madrid", "Panathinaikos AKTOR Athens", "Olympiacos Piraeus", "Fenerbahce Beko Istanbul", "AS Monaco", "FC Barcelona", "Maccabi Playtika Tel Aviv", "Baskonia Vitoria-Gasteiz", "Virtus Segafredo Bologna", "Anadolu Efes Istanbul", "Partizan Mozzart Bet Belgrade", "EA7 Emporio Armani Milan", "Zalgiris Kaunas", "FC Bayern Munich", "Crvena Zvezda Meridianbet Belgrade", "LDLC ASVEL Villeurbanne", "ALBA Berlin", "Paris Basketball"];
 
 const teams = {
-    "hockey": ["Anaheim Ducks", "Boston Bruins", "Buffalo Sabres", "Calgary Flames", "Carolina Hurricanes", "Chicago Blackhawks", "Colorado Avalanche", "Columbus Blue Jackets", "Dallas Stars", "Detroit Red Wings", "Edmonton Oilers", "Florida Panthers", "Los Angeles Kings", "Minnesota Wild", "Montreal Canadiens", "Nashville Predators", "New Jersey Devils", "New York Islanders", "New York Rangers", "Ottawa Senators", "Philadelphia Flyers", "Pittsburgh Penguins", "San Jose Sharks", "Seattle Kraken", "St. Louis Blues", "Tampa Bay Lightning", "Toronto Maple Leafs", "Utah Mammoth", "Vancouver Canucks", "Vegas Golden Knights", "Washington Capitals", "Winnipeg Jets"],
+    "hockey": Array.from(new Set([
+        // NHL
+        "Anaheim Ducks", "Boston Bruins", "Buffalo Sabres", "Calgary Flames", "Carolina Hurricanes", "Chicago Blackhawks", "Colorado Avalanche", "Columbus Blue Jackets", "Dallas Stars", "Detroit Red Wings", "Edmonton Oilers", "Florida Panthers", "Los Angeles Kings", "Minnesota Wild", "Montreal Canadiens", "Nashville Predators", "New Jersey Devils", "New York Islanders", "New York Rangers", "Ottawa Senators", "Philadelphia Flyers", "Pittsburgh Penguins", "San Jose Sharks", "Seattle Kraken", "St. Louis Blues", "Tampa Bay Lightning", "Toronto Maple Leafs", "Utah Mammoth", "Vancouver Canucks", "Vegas Golden Knights", "Washington Capitals", "Winnipeg Jets",
+        // AHL
+        "Abbotsford Canucks", "Coachella Valley Firebirds", "Colorado Eagles", "Colorado Gold Eagles", "Bakersfield Condors", "Calgary Wranglers", "Ontario Reign", "San Diego Gulls", "San Jose Barracuda", "Stockton Heat", "Tucson Roadrunners", "Texas Stars", "Charlotte Checkers", "Chicago Wolves", "Cleveland Monsters", "Grand Rapids Griffins", "Hamilton Bulldogs", "Hershey Bears", "Hartford Wolf Pack", "Iowa Wild", "Lehigh Valley Phantoms", "Laval Rocket", "Manitoba Moose", "Milwaukee Admirals", "Norfolk Admirals", "Providence Bruins", "Rochester Americans", "Rockford IceHogs", "Rochester Americans", "Springfield Thunderbirds", "Syracuse Crunch", "Toronto Marlies", "Tucson Roadrunners", "Utica Comets", "Wilkes-Barre/Scranton Penguins",
+        // KHL
+        "Ak Bars Kazan", "Avtomobilist Yekaterinburg", "Barys Nur-Sultan", "CSKA Moscow", "Dinamo Minsk", "Dinamo Riga", "HC Admiral Vladivostok", "HC Dynamo Moscow", "HC Lada Togliatti", "HC Neftekhimik Nizhnekamsk", "HC Sibir Novosibirsk", "Jokerit Helsinki", "Kunlun Red Star", "Metallurg Magnitogorsk", "Nizhny Novgorod Torpedo", "Salavat Yulaev Ufa", "Sibir Novosibirsk", "SKA Saint Petersburg", "Slovan Bratislava", "Severstal Cherepovets", "Vityaz Podolsk", "Amur Khabarovsk",
+        // SHL
+        "Björklöven", "Djurgården", "Färjestad", "Frölunda", "HV71", "Leksand", "Linköping", "Luleå", "Malmö", "MoDo", "Rögle", "Skellefteå", "Brynäs", "Timrå", "Örebro"
+    ])),
     "basketball": Array.from(new Set([
         ...nbaTeams,
         ...wnbaTeams,

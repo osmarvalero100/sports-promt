@@ -41,6 +41,7 @@ Only suggest combo bets if EACH selection individually has EV ≥ 5%.
 
 RESPONSE FORMAT (strict — one line per field):
 Analysis: Form: ... | H2H: ... | Injuries: ... | Context: ...
+
 Prediction: 
 Confidence: 
 Odds: 
@@ -105,6 +106,7 @@ Only suggest combo bets if EACH selection individually has EV ≥ 5%.
 
 RESPONSE FORMAT (strict — one line per field):
 Analysis: Goalies: ... | Form: ... | xG/Corsi: ... | SpecialTeams: ... | Rest/Travel: ... | Injuries: ... | H2H: ... | Context: ...
+
 Prediction: 
 Confidence: 
 Odds: 
@@ -165,6 +167,7 @@ Only suggest combo bets if EACH selection individually has EV ≥ 5%.
 
 RESPONSE FORMAT (strict — one line per field):
 Analysis: Form: ... | xG: ... | Injuries: ... | Tactics: ... | Context: ... | H2H: ...
+
 Prediction: 
 Confidence: 
 Odds: 
@@ -228,6 +231,7 @@ Only suggest combo bets if EACH selection individually has EV ≥ 5%.
 
 RESPONSE FORMAT (strict — one line per field):
 Analysis: Form: ... | Ratings/Pace: ... | Injuries/Rest: ... | H2H: ... | Context: ...
+
 Prediction: 
 Confidence: 
 Odds: 
@@ -291,6 +295,7 @@ Only suggest combo bets if EACH selection individually has EV ≥ 5%.
 
 RESPONSE FORMAT (strict — one line per field):
 Analysis: Pitchers: ... | Bullpen: ... | Offense: ... | Park/Weather: ... | H2H: ... | Context: ...
+
 Prediction: 
 Confidence: 
 Odds: 
@@ -353,6 +358,7 @@ Only suggest combo bets if EACH selection individually has EV ≥ 5%.
 
 RESPONSE FORMAT (strict — one line per field):
 Analysis: Surface: ... | Form: ... | H2H: ... | Fitness: ... | Serve/Return: ... | Context: ...
+
 Prediction: 
 Confidence: 
 Odds: 

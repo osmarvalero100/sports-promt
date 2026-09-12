@@ -54,6 +54,14 @@
                 <input id="championship" name="championship" type="text" class="form-control" autocomplete="on" />
               </div>
 
+              <div class="col-12 col-md-6">
+                <label for="promptLanguage" class="form-label">Idioma del prompt</label>
+                <select id="promptLanguage" name="promptLanguage" class="form-select" required>
+                  <option value="es">Español</option>
+                  <option value="en">Inglés</option>
+                </select>
+              </div>
+
               <div class="col-12">
                 <button type="submit" class="btn btn-primary w-100">Generar prompt</button>
               </div>
@@ -186,6 +194,7 @@
       const awayTeam = document.getElementById("awayTeam").value.trim();
       const matchDate = document.getElementById("matchDate").value;
       const championship = document.getElementById("championship").value.trim();
+      const promptLanguage = document.getElementById("promptLanguage").value;
 
       const fixtureInfoLines = [
         `Sport: ${sport}`,
@@ -199,7 +208,8 @@
       }
 
       const fixtureInfo = fixtureInfoLines.join("\n");
-      const selectedPrompt = PREDICTION_PROMPTS[sport] || PREDICTION_PROMPTS.general;
+      const promptSet = promptLanguage === "es" ? PREDICTION_PROMPTS_ES : PREDICTION_PROMPTS;
+      const selectedPrompt = promptSet[sport] || promptSet.general;
 
       const leagueSpecialistNote = championship
         ? ` You are also a specialist analyst in ${championship}, with extensive knowledge of this competition's teams/players, playing styles, history, and trends.`

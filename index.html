@@ -212,7 +212,9 @@
       const selectedPrompt = promptSet[sport] || promptSet.general;
 
       const leagueSpecialistNote = championship
-        ? ` You are also a specialist analyst in ${championship}, with extensive knowledge of this competition's teams/players, playing styles, history, and trends.`
+        ? promptLanguage === "es"
+          ? ` También eres un analista especialista en ${championship}, con amplio conocimiento de los equipos/jugadores de esta competición, sus estilos de juego, su historia y sus tendencias.`
+          : ` You are also a specialist analyst in ${championship}, with extensive knowledge of this competition's teams/players, playing styles, history, and trends.`
         : "";
 
       const generatedPrompt = selectedPrompt

@@ -74,7 +74,7 @@ CORE RULES:
 - Estimate TRUE probability (%) of outcomes.
 - Expected Value: EV = (True_probability × Odds) - 1, expressed as a percentage.
 - ONLY recommend bets with real EV ≥ 5%.
-- If either team has played fewer than 8 games this season, or a starting goalie is unconfirmed, raise the minimum required EV to 6.5%.
+- If either team has played fewer than 8 games this season, or a starting goalie is unconfirmed, raise the minimum required EV to 4.7%.
 - Stake sizing (1/4 Kelly, bankroll = 100 units): Stake = ((True_probability × Odds - 1) / (Odds - 1)) × 0.25 × 100, rounded to 1 decimal. Max stake: 5 units.
 - If no bet meets the EV threshold → output EXACTLY one line in this format and nothing else:
   NO BET: <what was missing — e.g., "best EV found was 4.2% in Total Goals Over 5.5, below threshold">
@@ -138,7 +138,7 @@ CORE RULES:
 - Estimate TRUE probability (%) of outcomes.
 - Expected Value: EV = (True_probability × Odds) - 1, expressed as a percentage.
 - ONLY recommend bets with real EV ≥ 5%.
-- Early-season rule: if either team has played fewer than 6 league matches this season, raise the minimum required EV to 6.5%.
+- Early-season rule: if either team has played fewer than 6 league matches this season, raise the minimum required EV to 4.7%.
 - Stake sizing (1/4 Kelly, bankroll = 100 units): Stake = ((True_probability × Odds - 1) / (Odds - 1)) × 0.25 × 100, rounded to 1 decimal. Max stake: 5 units.
 - If no bet meets the EV threshold → output EXACTLY one line in this format and nothing else:
   NO BET: <what was missing — e.g., "best EV found was 3.1% in Over 2.5 goals, below threshold">
@@ -200,7 +200,7 @@ CORE RULES:
 - Estimate TRUE probability (%) of outcomes.
 - Expected Value: EV = (True_probability × Odds) - 1, expressed as a percentage.
 - ONLY recommend bets with real EV ≥ 5%.
-- If a rotation/star player's status is unconfirmed or a team is on a back-to-back, raise the minimum required EV to 6.5% due to added variance.
+- If a rotation/star player's status is unconfirmed or a team is on a back-to-back, raise the minimum required EV to 4.7% due to added variance.
 - Stake sizing (1/4 Kelly, bankroll = 100 units): Stake = ((True_probability × Odds - 1) / (Odds - 1)) × 0.25 × 100, rounded to 1 decimal. Max stake: 5 units.
 - If no bet meets the EV threshold → output EXACTLY one line in this format and nothing else:
   NO BET: <what was missing — e.g., "best EV found was 4.0% in Point Spread, below threshold">
@@ -264,7 +264,7 @@ CORE RULES:
 - Estimate TRUE probability (%) of outcomes.
 - Expected Value: EV = (True_probability × Odds) - 1, expressed as a percentage.
 - ONLY recommend bets with real EV ≥ 5%.
-- If either starting pitcher is unconfirmed or has fewer than 5 starts this season, raise the minimum required EV to 6.5%.
+- If either starting pitcher is unconfirmed or has fewer than 5 starts this season, raise the minimum required EV to 4.7%.
 - Stake sizing (1/4 Kelly, bankroll = 100 units): Stake = ((True_probability × Odds - 1) / (Odds - 1)) × 0.25 × 100, rounded to 1 decimal. Max stake: 5 units.
 - If no bet meets the EV threshold → output EXACTLY one line in this format and nothing else:
   NO BET: <what was missing — e.g., "best EV found was 4.3% in Run Line, below threshold">
@@ -328,7 +328,7 @@ CORE RULES:
 - Estimate TRUE probability (%) of outcomes.
 - Expected Value: EV = (True_probability × Odds) - 1, expressed as a percentage.
 - ONLY recommend bets with real EV ≥ 5%.
-- If either player has fewer than 3 matches on the current surface this season, raise the minimum required EV to 6.5%.
+- If either player has fewer than 3 matches on the current surface this season, raise the minimum required EV to 4.7%.
 - Stake sizing (1/4 Kelly, bankroll = 100 units): Stake = ((True_probability × Odds - 1) / (Odds - 1)) × 0.25 × 100, rounded to 1 decimal. Max stake: 5 units.
 - If no bet meets the EV threshold → output EXACTLY one line in this format and nothing else:
   NO BET: <what was missing — e.g., "best EV found was 4.4% in Total Games Over 22.5, below threshold">
@@ -448,7 +448,7 @@ REGLAS PRINCIPALES:
 - Estima la probabilidad REAL (%) de los resultados.
 - Valor Esperado: VE = (Probabilidad_real × Cuota) - 1, expresado como porcentaje.
 - SOLO recomienda apuestas con VE real ≥ 5%.
-- Si alguno de los equipos ha jugado menos de 8 partidos esta temporada, o el portero titular no está confirmado, eleva el VE mínimo requerido al 6.5%.
+- Si alguno de los equipos ha jugado menos de 8 partidos esta temporada, o el portero titular no está confirmado, eleva el VE mínimo requerido al 4.7%.
 - Cálculo del tamaño de la apuesta (1/4 Kelly, bankroll = 100 unidades): Stake = ((Probabilidad_real × Cuota - 1) / (Cuota - 1)) × 0.25 × 100, redondeado a 1 decimal. Stake máximo: 5 unidades.
 - Si ninguna apuesta alcanza el umbral de VE → emite EXACTAMENTE una línea con este formato y nada más:
   SIN APUESTA: <qué faltó — p. ej., "el mejor VE encontrado fue 4.2% en Total de goles Over 5.5, por debajo del umbral">
@@ -511,7 +511,7 @@ REGLAS PRINCIPALES:
 - Estima la probabilidad REAL (%) de los resultados.
 - Valor Esperado: VE = (Probabilidad_real × Cuota) - 1, expresado como porcentaje.
 - SOLO recomienda apuestas con VE real ≥ 5%.
-- Regla de inicio de temporada: si alguno de los equipos ha jugado menos de 6 partidos de liga esta temporada, eleva el VE mínimo requerido al 6.5%.
+- Regla de inicio de temporada: si alguno de los equipos ha jugado menos de 6 partidos de liga esta temporada, eleva el VE mínimo requerido al 4.7%.
 - Cálculo del tamaño de la apuesta (1/4 Kelly, bankroll = 100 unidades): Stake = ((Probabilidad_real × Cuota - 1) / (Cuota - 1)) × 0.25 × 100, redondeado a 1 decimal. Stake máximo: 5 unidades.
 - Si ninguna apuesta alcanza el umbral de VE → emite EXACTAMENTE una línea con este formato y nada más:
   SIN APUESTA: <qué faltó — p. ej., "el mejor VE encontrado fue 3.1% en Over 2.5 goles, por debajo del umbral">
@@ -572,7 +572,7 @@ REGLAS PRINCIPALES:
 - Estima la probabilidad REAL (%) de los resultados.
 - Valor Esperado: VE = (Probabilidad_real × Cuota) - 1, expresado como porcentaje.
 - SOLO recomienda apuestas con VE real ≥ 5%.
-- Si el estado de un jugador de rotación/estrella no está confirmado o un equipo juega en noches consecutivas (back-to-back), eleva el VE mínimo requerido al 6.5% debido a la varianza añadida.
+- Si el estado de un jugador de rotación/estrella no está confirmado o un equipo juega en noches consecutivas (back-to-back), eleva el VE mínimo requerido al 4.7% debido a la varianza añadida.
 - Cálculo del tamaño de la apuesta (1/4 Kelly, bankroll = 100 unidades): Stake = ((Probabilidad_real × Cuota - 1) / (Cuota - 1)) × 0.25 × 100, redondeado a 1 decimal. Stake máximo: 5 unidades.
 - Si ninguna apuesta alcanza el umbral de VE → emite EXACTAMENTE una línea con este formato y nada más:
   SIN APUESTA: <qué faltó — p. ej., "el mejor VE encontrado fue 4.0% en el Spread de puntos, por debajo del umbral">
@@ -635,7 +635,7 @@ REGLAS PRINCIPALES:
 - Estima la probabilidad REAL (%) de los resultados.
 - Valor Esperado: VE = (Probabilidad_real × Cuota) - 1, expresado como porcentaje.
 - SOLO recomienda apuestas con VE real ≥ 5%.
-- Si alguno de los lanzadores abridores no está confirmado o tiene menos de 5 aperturas esta temporada, eleva el VE mínimo requerido al 6.5%.
+- Si alguno de los lanzadores abridores no está confirmado o tiene menos de 5 aperturas esta temporada, eleva el VE mínimo requerido al 4.7%.
 - Cálculo del tamaño de la apuesta (1/4 Kelly, bankroll = 100 unidades): Stake = ((Probabilidad_real × Cuota - 1) / (Cuota - 1)) × 0.25 × 100, redondeado a 1 decimal. Stake máximo: 5 unidades.
 - Si ninguna apuesta alcanza el umbral de VE → emite EXACTAMENTE una línea con este formato y nada más:
   SIN APUESTA: <qué faltó — p. ej., "el mejor VE encontrado fue 4.3% en la Línea de Carreras, por debajo del umbral">
@@ -698,7 +698,7 @@ REGLAS PRINCIPALES:
 - Estima la probabilidad REAL (%) de los resultados.
 - Valor Esperado: VE = (Probabilidad_real × Cuota) - 1, expresado como porcentaje.
 - SOLO recomienda apuestas con VE real ≥ 5%.
-- Si alguno de los jugadores tiene menos de 3 partidos en la superficie actual esta temporada, eleva el VE mínimo requerido al 6.5%.
+- Si alguno de los jugadores tiene menos de 3 partidos en la superficie actual esta temporada, eleva el VE mínimo requerido al 4.7%.
 - Cálculo del tamaño de la apuesta (1/4 Kelly, bankroll = 100 unidades): Stake = ((Probabilidad_real × Cuota - 1) / (Cuota - 1)) × 0.25 × 100, redondeado a 1 decimal. Stake máximo: 5 unidades.
 - Si ninguna apuesta alcanza el umbral de VE → emite EXACTAMENTE una línea con este formato y nada más:
   SIN APUESTA: <qué faltó — p. ej., "el mejor VE encontrado fue 4.4% en Total de juegos Over 22.5, por debajo del umbral">

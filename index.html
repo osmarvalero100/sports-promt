@@ -55,6 +55,17 @@
               </div>
 
               <div class="col-12 col-md-6">
+                <label for="matchUrl" class="form-label">URL de información (opcional)</label>
+                <input
+                  id="matchUrl"
+                  name="matchUrl"
+                  type="url"
+                  class="form-control"
+                  placeholder="https://www.aiscore.com/match-cruz-azul-club-america/527r3i4xl0pf47e/h2h"
+                />
+              </div>
+
+              <div class="col-12 col-md-6">
                 <label for="promptLanguage" class="form-label">Idioma del prompt</label>
                 <select id="promptLanguage" name="promptLanguage" class="form-select" required>
                   <option value="es">Español</option>
@@ -101,6 +112,7 @@
     const homeTeamInput = document.getElementById("homeTeam");
     const awayTeamInput = document.getElementById("awayTeam");
     const championshipInput = document.getElementById("championship");
+    const matchUrlInput = document.getElementById("matchUrl");
 
     let homeTeamDatalist = document.getElementById("homeTeamList");
     let awayTeamDatalist = document.getElementById("awayTeamList");
@@ -166,6 +178,14 @@
       homeTeamInput.value = "";
       awayTeamInput.value = "";
       championshipInput.value = "";
+      matchUrlInput.value = "";
+    });
+
+    matchUrlInput.addEventListener("blur", function () {
+      const val = this.value.trim();
+      if (val && !/^https?:\/\//i.test(val)) {
+        this.value = "https://" + val;
+      }
     });
   </script>
 
@@ -194,6 +214,10 @@
       const awayTeam = document.getElementById("awayTeam").value.trim();
       const matchDate = document.getElementById("matchDate").value;
       const championship = document.getElementById("championship").value.trim();
+      let matchUrl = document.getElementById("matchUrl").value.trim();
+      if (matchUrl && !/^https?:\/\//i.test(matchUrl)) {
+        matchUrl = `https://${matchUrl}`;
+      }
       const promptLanguage = document.getElementById("promptLanguage").value;
 
       const fixtureInfoLines = [
@@ -205,6 +229,16 @@
 
       if (championship) {
         fixtureInfoLines.push(`Championship: ${championship}`);
+      }
+
+      if (matchUrl) {
+        if (promptLanguage === "es") {
+          fixtureInfoLines.push(`URL de información: ${matchUrl}`);
+          fixtureInfoLines.push(`Instrucción de URL: Usa la información de esta URL si la consideras relevante para el análisis.`);
+        } else {
+          fixtureInfoLines.push(`Information URL: ${matchUrl}`);
+          fixtureInfoLines.push(`URL Instruction: Use the information from this URL if you consider it relevant for the analysis.`);
+        }
       }
 
       const fixtureInfo = fixtureInfoLines.join("\n");

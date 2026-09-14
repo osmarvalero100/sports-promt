@@ -60,6 +60,18 @@ const nbaTeams = ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte
 const wnbaTeams = ["Atlanta Dream", "Chicago Sky", "Connecticut Sun", "Dallas Wings", "Indiana Fever", "Las Vegas Aces", "Los Angeles Sparks", "Minnesota Lynx", "New York Liberty", "Phoenix Mercury", "Seattle Storm", "Washington Mystics", "Golden State Valkyries"];
 const euroleagueTeams = ["Real Madrid", "Panathinaikos AKTOR Athens", "Olympiacos Piraeus", "Fenerbahce Beko Istanbul", "AS Monaco", "FC Barcelona", "Maccabi Playtika Tel Aviv", "Baskonia Vitoria-Gasteiz", "Virtus Segafredo Bologna", "Anadolu Efes Istanbul", "Partizan Mozzart Bet Belgrade", "EA7 Emporio Armani Milan", "Zalgiris Kaunas", "FC Bayern Munich", "Crvena Zvezda Meridianbet Belgrade", "LDLC ASVEL Villeurbanne", "ALBA Berlin", "Paris Basketball"];
 
+// American Football (NFL)
+const nflTeams = [
+    "Arizona Cardinals", "Atlanta Falcons", "Baltimore Ravens", "Buffalo Bills",
+    "Carolina Panthers", "Chicago Bears", "Cincinnati Bengals", "Cleveland Browns",
+    "Dallas Cowboys", "Denver Broncos", "Detroit Lions", "Green Bay Packers",
+    "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Kansas City Chiefs",
+    "Las Vegas Raiders", "Los Angeles Chargers", "Los Angeles Rams", "Miami Dolphins",
+    "Minnesota Vikings", "New England Patriots", "New Orleans Saints", "New York Giants",
+    "New York Jets", "Philadelphia Eagles", "Pittsburgh Steelers", "San Francisco 49ers",
+    "Seattle Seahawks", "Tampa Bay Buccaneers", "Tennessee Titans", "Washington Commanders"
+];
+
 const teams = {
     "hockey": Array.from(new Set([
         // NHL
@@ -67,7 +79,7 @@ const teams = {
         // AHL
         "Abbotsford Canucks", "Coachella Valley Firebirds", "Colorado Eagles", "Colorado Gold Eagles", "Bakersfield Condors", "Calgary Wranglers", "Ontario Reign", "San Diego Gulls", "San Jose Barracuda", "Stockton Heat", "Tucson Roadrunners", "Texas Stars", "Charlotte Checkers", "Chicago Wolves", "Cleveland Monsters", "Grand Rapids Griffins", "Hamilton Bulldogs", "Hershey Bears", "Hartford Wolf Pack", "Iowa Wild", "Lehigh Valley Phantoms", "Laval Rocket", "Manitoba Moose", "Milwaukee Admirals", "Norfolk Admirals", "Providence Bruins", "Rochester Americans", "Rockford IceHogs", "Rochester Americans", "Springfield Thunderbirds", "Syracuse Crunch", "Toronto Marlies", "Tucson Roadrunners", "Utica Comets", "Wilkes-Barre/Scranton Penguins",
         // KHL
-        "Ak Bars Kazan", "Avtomobilist Yekaterinburg", "Barys Nur-Sultan", "CSKA Moscow", "Dinamo Minsk", "Dinamo Riga", "HC Admiral Vladivostok", "HC Dynamo Moscow", "HC Lada Togliatti", "HC Neftekhimik Nizhnekamsk", "HC Sibir Novosibirsk", "Jokerit Helsinki", "Avangard Omsk", "Kunlun Red Star", "Metallurg Magnitogorsk", "Nizhny Novgorod Torpedo", "Salavat Yulaev Ufa", "Shanghai", "Sibir Novosibirsk", "Spartak Moscú", "SKA Saint Petersburg", "Slovan Bratislava", "Severstal Cherepovets", "Sochi", "Vityaz Podolsk", "Amur Khabarovsk",
+        "Ak Bars Kazan", "Avtomobilist Yekaterinburg", "Barys Nur-Sultan", "CSKA Moscow", "Dinamo Minsk", "Dinamo Riga", "HC Admiral Vladivostok", "HC Dynamo Moscow", "HC Lada Togliatti", "HC Neftekhimik Nizhnekamsk", "HC Sibir Novosibirsk", "Jokerit Helsinki", "Lokomotiv Yaroslavl", "Avangard Omsk", "Kunlun Red Star", "Metallurg Magnitogorsk", "Nizhny Novgorod Torpedo", "Salavat Yulaev Ufa", "Shanghai", "Sibir Novosibirsk", "Spartak Moscú", "SKA Saint Petersburg", "Slovan Bratislava", "Severstal Cherepovets", "Sochi", "Vityaz Podolsk", "Amur Khabarovsk",
         // SHL
         "Björklöven", "Djurgården", "Färjestad", "Frölunda", "HV71", "Leksand", "Linköping", "Luleå", "Malmö", "MoDo", "Rögle", "Skellefteå", "Brynäs", "Timrå", "Örebro"
     ])),
@@ -91,6 +103,12 @@ const teams = {
     ])),
     "tennis": Array.from(new Set([
         ...tennisPlayers_atp, ...tennisPlayers_wta
+    ])),
+    "american_football": Array.from(new Set([
+        ...nflTeams
+    ])),
+    "nfl": Array.from(new Set([
+        ...nflTeams
     ]))
 };
 
@@ -105,5 +123,7 @@ const championships = {
         "UEFA Champions League", "UEFA Europa League", "UEFA Conference League",
         "FIFA World Cup", "UEFA Euro", "Copa America", "AFCON", "Asian Cup"
     ],
-    "tennis": ["Australian Open", "Roland Garros", "Wimbledon", "US Open", "ATP Finals", "WTA Finals", "ATP Masters 1000", "WTA 1000", "ATP 500", "WTA 500", "ATP 250", "WTA 250", "Davis Cup", "Billie Jean King Cup", "Olympics"]
+    "tennis": ["Australian Open", "Roland Garros", "Wimbledon", "US Open", "ATP Finals", "WTA Finals", "ATP Masters 1000", "WTA 1000", "ATP 500", "WTA 500", "ATP 250", "WTA 250", "Davis Cup", "Billie Jean King Cup", "Olympics"],
+    "american_football": ["NFL", "NCAA Football", "CFL", "UFL", "Super Bowl"],
+    "nfl": ["NFL", "Super Bowl"]
 };

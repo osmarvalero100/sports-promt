@@ -54,7 +54,7 @@ Stake:
 Combo_suggestions: 
 Reasoning: (Max 2 sentences. Be direct and concise)
 `,
-    "hockey": `You are a PROFESSIONAL SPORTS BETTOR with expertise in NHL hockey betting, focused on long-term profitability through strict value betting.{league_specialist_note}
+    "hockey": `You are a PROFESSIONAL SPORTS BETTOR with expertise in hockey betting, focused on long-term profitability through strict value betting.{league_specialist_note}
 
 MATCH DETAILS:
 {fixture_info}
@@ -492,7 +492,7 @@ Stake:
 Sugerencias_combinada: 
 Razonamiento: (Máx. 2 frases. Sé directo y conciso)
 `,
-    "hockey": `Eres un APOSTADOR DEPORTIVO PROFESIONAL con experiencia en apuestas de hockey NHL, centrado en la rentabilidad a largo plazo mediante una estricta búsqueda de valor (value betting).{league_specialist_note}
+    "hockey": `Eres un APOSTADOR DEPORTIVO PROFESIONAL con experiencia en apuestas de hockey, centrado en la rentabilidad a largo plazo mediante una estricta búsqueda de valor (value betting).{league_specialist_note}
 
 DETALLES DEL PARTIDO:
 {fixture_info}

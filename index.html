@@ -220,20 +220,57 @@
         matchUrl = `https://${matchUrl}`;
       }
       const promptLanguage = document.getElementById("promptLanguage").value;
+      const isSpanish = promptLanguage === "es";
 
-      const fixtureInfoLines = [
-        `Sport: ${sport}`,
-        `Home Team: ${homeTeam}`,
-        `Away Team: ${awayTeam}`,
-        `Date: ${matchDate}`,
-      ];
+      const sportNames = {
+        es: {
+          tennis: "Tenis",
+          hockey: "Hockey",
+          football: "Fútbol",
+          basketball: "Basketball",
+          baseball: "Baseball",
+          american_football: "Fútbol Americano",
+          general: "General",
+        },
+        en: {
+          tennis: "Tennis",
+          hockey: "Hockey",
+          football: "Football",
+          basketball: "Basketball",
+          baseball: "Baseball",
+          american_football: "American Football",
+          general: "General",
+        },
+      };
+
+      const selectedSportName =
+        sportNames[promptLanguage]?.[sport] ||
+        (isSpanish
+          ? sportSelect.options[sportSelect.selectedIndex]?.text || sport
+          : sport);
+
+      const fixtureInfoLines = isSpanish
+        ? [
+            `Deporte: ${selectedSportName}`,
+            `Equipo local: ${homeTeam}`,
+            `Equipo visitante: ${awayTeam}`,
+            `Fecha: ${matchDate}`,
+          ]
+        : [
+            `Sport: ${selectedSportName}`,
+            `Home Team: ${homeTeam}`,
+            `Away Team: ${awayTeam}`,
+            `Date: ${matchDate}`,
+          ];
 
       if (championship) {
-        fixtureInfoLines.push(`Championship: ${championship}`);
+        fixtureInfoLines.push(
+          isSpanish ? `Campeonato: ${championship}` : `Championship: ${championship}`
+        );
       }
 
       if (matchUrl) {
-        if (promptLanguage === "es") {
+        if (isSpanish) {
           fixtureInfoLines.push(`URL de información: ${matchUrl}`);
           fixtureInfoLines.push(`Instrucción de URL: Usa la información de esta URL si la consideras relevante para el análisis.`);
         } else {

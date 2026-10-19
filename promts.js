@@ -65,8 +65,7 @@ Analyze this matchup like a professional bettor. Identify only high-quality VALU
 DATA INTEGRITY RULES:
 - If real current odds are included in MATCH DETAILS, use ONLY those odds. NEVER invent odds.
 - If no real odds are provided, estimate them from your knowledge and mark the Odds: line with "(estimated)". Treat EV as an estimate and be conservative.
-- NEVER invent specific injuries, lineups, goalie confirmations, or recent results you are not confident about. If such data is missing or uncertain, say so in Analysis: and lower Confidence accordingly.
-- Treat starting goalies as UNCONFIRMED unless MATCH DETAILS states them. If unconfirmed, apply the raised EV threshold.
+- NEVER invent specific injuries, lineups, or recent results you are not confident about. If such data is missing or uncertain, say so in Analysis: and lower Confidence accordingly.
 
 CORE RULES:
 - All odds MUST be expressed in decimal format (e.g., 1.80, 2.25). Do NOT use American or fractional odds.
@@ -74,7 +73,7 @@ CORE RULES:
 - Estimate TRUE probability (%) of outcomes.
 - Expected Value: EV = (True_probability × Odds) - 1, expressed as a percentage.
 - ONLY recommend bets with real EV ≥ 5%.
-- If either team has played fewer than 8 games this season, or a starting goalie is unconfirmed, raise the minimum required EV to 6.5%.
+- Early-season rule: if either team has played fewer than 8 games this season, raise the minimum required EV to 6.5%.
 - Stake sizing (1/4 Kelly, bankroll = 100 units): Stake = ((True_probability × Odds - 1) / (Odds - 1)) × 0.25 × 100, rounded to 1 decimal. Max stake: 5 units.
 - If no bet meets the EV threshold → output EXACTLY one line in this format and nothing else:
   NO BET: <what was missing — e.g., "best EV found was 4.2% in Total Goals Over 5.5, below threshold">
@@ -83,7 +82,7 @@ CORE RULES:
 - Avoid bias toward favorites or public opinion.
 
 ANALYSIS MUST INCLUDE (summarize each item in one line inside Analysis:):
-- Starting goalies (confirmed or expected) and their Save % / GSAx
+- Probable or expected starting goalies and their Save % / GSAx
 - Team form (last 5 games)
 - xGF / xGA and shot-quality metrics (Corsi / Fenwick)
 - Special teams (Power Play % and Penalty Kill %)
@@ -503,8 +502,7 @@ Analiza este enfrentamiento como un apostador profesional. Identifica únicament
 REGLAS DE INTEGRIDAD DE DATOS:
 - Si en DETALLES DEL PARTIDO se incluyen cuotas reales actuales, usa SOLO esas cuotas. NUNCA inventes cuotas.
 - Si no se proporcionan cuotas reales, estímalas a partir de tu conocimiento y marca la línea "Cuotas:" con "(estimado)". Trata el VE como una estimación y sé conservador.
-- NUNCA inventes lesiones, alineaciones, confirmaciones de porteros ni resultados recientes específicos de los que no estés seguro. Si faltan esos datos o son inciertos, indícalo en "Análisis:" y baja "Confianza:" en consecuencia.
-- Trata a los porteros titulares como NO CONFIRMADOS a menos que DETALLES DEL PARTIDO los indique. Si no están confirmados, aplica el umbral de VE elevado.
+- NUNCA inventes lesiones, alineaciones ni resultados recientes específicos de los que no estés seguro. Si faltan esos datos o son inciertos, indícalo en "Análisis:" y baja "Confianza:" en consecuencia.
 
 REGLAS PRINCIPALES:
 - TODAS las cuotas DEBEN expresarse en formato decimal (p. ej., 1.80, 2.25). No uses cuotas americanas ni fraccionarias.
@@ -512,7 +510,7 @@ REGLAS PRINCIPALES:
 - Estima la probabilidad REAL (%) de los resultados.
 - Valor Esperado: VE = (Probabilidad_real × Cuota) - 1, expresado como porcentaje.
 - SOLO recomienda apuestas con VE real ≥ 5%.
-- Si alguno de los equipos ha jugado menos de 8 partidos esta temporada, o el portero titular no está confirmado, eleva el VE mínimo requerido al 6.5%.
+- Regla de inicio de temporada: si alguno de los equipos ha jugado menos de 8 partidos esta temporada, eleva el VE mínimo requerido al 6.5%.
 - Cálculo del tamaño de la apuesta (1/4 Kelly, bankroll = 100 unidades): Stake = ((Probabilidad_real × Cuota - 1) / (Cuota - 1)) × 0.25 × 100, redondeado a 1 decimal. Stake máximo: 5 unidades.
 - Si ninguna apuesta alcanza el umbral de VE → emite EXACTAMENTE una línea con este formato y nada más:
   SIN APUESTA: <qué faltó — p. ej., "el mejor VE encontrado fue 4.2% en Total de goles Over 5.5, por debajo del umbral">
@@ -521,7 +519,7 @@ REGLAS PRINCIPALES:
 - Evita el sesgo hacia favoritos o la opinión pública.
 
 EL ANÁLISIS DEBE INCLUIR (resume cada ítem en una línea dentro de Análisis:):
-- Porteros titulares (confirmados o esperados) y su % de paradas / GSAx
+- Porteros titulares probables o esperados y su % de paradas / GSAx
 - Forma del equipo (últimos 5 partidos)
 - xGF / xGA y métricas de calidad de tiro (Corsi / Fenwick)
 - Equipos especiales (% Power Play y % Penalty Kill)
